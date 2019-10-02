@@ -72,12 +72,12 @@ main {
   position: relative;
 }
 
-.cardfront {
+.cardback {
   background-image: url(images/lfz-card.jpg);
   z-index: 1;
 }
 
-.cardback {
+.cardfront {
   background-image: url(images/css-logo.png);
 }
 
@@ -87,6 +87,14 @@ main {
   height: 100%;
   width: 100%;
   position: absolute;
+}
+
+.cf2 {
+  background-image: url(images/docker-logo.jpg);
+}
+
+.cf3 {
+  background-image: url(images/gitHub-logo.png);
 }
 
 .hidden {
