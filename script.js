@@ -5,11 +5,15 @@ var firstCardClicked = null;
 var secondCardClicked = null;
 var matches = null;
 
-var maxMatches = 2;
+var maxMatches = 9;
+
+var attempts = 0;
+var gamesPlayed = 0;
 
 
 function initializeApp() {
   $(".card").click(handleCardClick);
+  displayStats();
 }
 
 function handleCardClick(event) {
@@ -19,6 +23,7 @@ function handleCardClick(event) {
   if (firstCardClicked === null) {
     firstCardClicked = $(event.currentTarget);
   } else {
+    attempts++;
     secondCardClicked = $(event.currentTarget);
 
     var firstImg = firstCardClicked.find(".cardfront").css("background-image");
@@ -26,13 +31,17 @@ function handleCardClick(event) {
 
     if (firstImg === secondImg) {
       console.log("cards match");
-      matches = matches + 1;
+      matches++;
+      displayStats();
       firstCardClicked = null;
       secondCardClicked = null;
       if (matches === maxMatches) {
+        gamesPlayed++;
+        displayStats();
         toggleModal();
       }
     } else {
+      displayStats();
       setTimeout(
         function () {
           firstCardClicked.find(".cardback").removeClass("hidden");
@@ -44,7 +53,26 @@ function handleCardClick(event) {
   }
 }
 
-
 function toggleModal() {
   $(".modal").toggleClass("showModal");
+}
+
+function calculateAccuracy() {
+  var accuracy = matches / attempts;
+  accuracy = Math.floor(accuracy * 100); //decimal to percentage
+  return accuracy;
+}
+
+function displayStats() {
+  $(".gamesPlayed").text("Games Played:");
+  $(".gamesNum").text(gamesPlayed);
+  $(".attempts").text("Attempts:");
+  $(".attemptsNum").text(attempts);
+  $(".accuracy").text("Accuracy:");
+  if (attempts >= 1) {
+    var accuracyResult = calculateAccuracy();
+    $(".accuracyNum").text(accuracyResult + "%");
+  } else {
+    $(".accuracyNum").text("We'll See!");
+  }
 }
