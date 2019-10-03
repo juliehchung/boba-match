@@ -36,8 +36,7 @@ function handleCardClick(event) {
       firstCardClicked = null;
       secondCardClicked = null;
       if (matches === maxMatches) {
-        gamesPlayed++;
-        displayStats();
+        resetStats();
         toggleModal();
       }
     } else {
@@ -75,4 +74,12 @@ function displayStats() {
   } else {
     $(".accuracyNum").text("We'll See!");
   }
+}
+
+function resetStats() {
+  matches = null;
+  attempts = 0;
+  gamesPlayed++;
+  displayStats();
+  $(".cardback").removeClass("hidden");
 }
