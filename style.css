@@ -65,6 +65,36 @@ main {
   align-items: center;
 }
 
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modalContent {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 2%;
+  margin: 2% auto;
+  width: 25vw;
+  height: 30vh;
+  border-radius: 0.5rem;
+}
+
+.showModal {
+  opacity: 1;
+  visibility: visible;
+  transition: 0.5s;
+}
+
 .card {
   background-color: black;
   height: 90%;
@@ -77,10 +107,6 @@ main {
   z-index: 1;
 }
 
-.cardfront {
-  background-image: url(images/css-logo.png);
-}
-
 .cardfront, .cardback {
   background-position: center;
   background-size: cover;
@@ -89,12 +115,12 @@ main {
   position: absolute;
 }
 
-.cf2 {
-  background-image: url(images/docker-logo.jpg);
+.cf1 {
+  background-image: url(images/css-logo.png);
 }
 
-.cf3 {
-  background-image: url(images/gitHub-logo.png);
+.cf2 {
+  background-image: url(images/docker-logo.jpg);
 }
 
 .hidden {
