@@ -5,10 +5,12 @@ var firstCardClicked = null;
 var secondCardClicked = null;
 var matches = null;
 
+var maxMatches = 2;
+
+
 function initializeApp() {
   $(".card").click(handleCardClick);
 }
-
 
 function handleCardClick(event) {
   console.log(event);
@@ -27,6 +29,9 @@ function handleCardClick(event) {
       matches = matches + 1;
       firstCardClicked = null;
       secondCardClicked = null;
+      if (matches === maxMatches) {
+        toggleModal();
+      }
     } else {
       setTimeout(
         function () {
@@ -37,5 +42,9 @@ function handleCardClick(event) {
         }, 1500);
     }
   }
+}
 
+
+function toggleModal() {
+  $(".modal").toggleClass("showModal");
 }
