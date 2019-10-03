@@ -1,5 +1,6 @@
 body {
   margin: 0px;
+  background-image: url(images/lfz-background.jpg);
 }
 
 header {
@@ -74,6 +75,7 @@ main {
   background-color: rgba(0, 0, 0, 0.5);
   opacity: 0;
   visibility: hidden;
+  z-index: 1;
 }
 
 .modalContent {
@@ -121,6 +123,34 @@ main {
 
 .cf2 {
   background-image: url(images/docker-logo.jpg);
+}
+
+.cf3 {
+  background-image: url(images/gitHub-logo.png);
+}
+
+.cf4 {
+  background-image: url(images/html-logo.png);
+}
+
+.cf5 {
+  background-image: url(images/js-logo.png);
+}
+
+.cf6 {
+  background-image: url(images/mysql-logo.jpg);
+}
+
+.cf7 {
+  background-image: url(images/node-logo.png);
+}
+
+.cf8 {
+  background-image: url(images/php-logo.jpeg);
+}
+
+.cf9 {
+  background-image: url(images/react-logo.png);
 }
 
 .hidden {
