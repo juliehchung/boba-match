@@ -46,6 +46,7 @@ function handleCardClick(event) {
       if (matches === maxMatches) {
         resetStats();
         toggleDisableClick($(".card"));
+        $(".cardfront").shuffle();
         toggleModal();
       }
     } else {
@@ -68,7 +69,7 @@ function toggleModal() {
 
 function calculateAccuracy() {
   var accuracy = matches / attempts;
-  accuracy = Math.floor(accuracy * 100); //decimal to percentage
+  accuracy = Math.floor(accuracy * 100);
   return accuracy;
 }
 
@@ -97,3 +98,24 @@ function resetStats() {
 function toggleDisableClick(element) {
   element.toggleClass("clicked");
 }
+
+
+//shuffle plug-in
+(function ($) {
+  $.fn.shuffle = function () {
+    var allElems = this.get(),
+      getRandom = function (max) {
+        return Math.floor(Math.random() * max);
+      },
+      shuffled = $.map(allElems, function () {
+        var random = getRandom(allElems.length),
+          randEl = $(allElems[random]).clone(true)[0];
+        allElems.splice(random, 1);
+        return randEl;
+      });
+    this.each(function (i) {
+      $(this).replaceWith($(shuffled[i]));
+    });
+    return $(shuffled);
+  };
+})(jQuery);

@@ -121,6 +121,14 @@ main {
   position: absolute;
 }
 
+.card.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.cardback:hover {
+  transform: scale(1.2);
+}
+
 .cf1 {
   background-image: url(images/css-logo.png);
 }
