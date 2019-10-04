@@ -14,17 +14,25 @@ var gamesPlayed = 0;
 function initializeApp() {
   $(".card").click(handleCardClick);
   displayStats();
+  $(".restartButton").click(toggleModal);
 }
 
 function handleCardClick(event) {
+  if (firstCardClicked !== null && secondCardClicked !== null) {
+    return;
+  }
+
   console.log(event);
+
   $(event.currentTarget).find(".cardback").addClass("hidden");
 
   if (firstCardClicked === null) {
     firstCardClicked = $(event.currentTarget);
+    toggleDisableClick(firstCardClicked);
   } else {
     attempts++;
     secondCardClicked = $(event.currentTarget);
+    toggleDisableClick(secondCardClicked);
 
     var firstImg = firstCardClicked.find(".cardfront").css("background-image");
     var secondImg = secondCardClicked.find(".cardfront").css("background-image");
@@ -37,9 +45,11 @@ function handleCardClick(event) {
       secondCardClicked = null;
       if (matches === maxMatches) {
         resetStats();
+        toggleDisableClick($(".card"));
         toggleModal();
       }
     } else {
+      $(".card").removeClass("clicked");
       displayStats();
       setTimeout(
         function () {
@@ -82,4 +92,8 @@ function resetStats() {
   gamesPlayed++;
   displayStats();
   $(".cardback").removeClass("hidden");
+}
+
+function toggleDisableClick(element) {
+  element.toggleClass("clicked");
 }
