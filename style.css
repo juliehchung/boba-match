@@ -109,6 +109,10 @@ main {
   z-index: 1;
 }
 
+.cardfront {
+  pointer-events: none;
+}
+
 .cardfront, .cardback {
   background-position: center;
   background-size: cover;
@@ -151,6 +155,10 @@ main {
 
 .cf9 {
   background-image: url(images/react-logo.png);
+}
+
+.clicked {
+  pointer-events: none;
 }
 
 .hidden {
