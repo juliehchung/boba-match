@@ -22,8 +22,6 @@ function handleCardClick(event) {
     return;
   }
 
-  console.log(event);
-
   $(event.currentTarget).find(".cardback").addClass("hidden");
 
   if (firstCardClicked === null) {
@@ -38,19 +36,18 @@ function handleCardClick(event) {
     var secondImg = secondCardClicked.find(".cardfront").css("background-image");
 
     if (firstImg === secondImg) {
-      console.log("cards match");
       matches++;
       displayStats();
       firstCardClicked = null;
       secondCardClicked = null;
       if (matches === maxMatches) {
         resetStats();
-        toggleDisableClick($(".card"));
         $(".cardfront").shuffle();
         toggleModal();
       }
     } else {
-      $(".card").removeClass("clicked");
+      toggleDisableClick(firstCardClicked);
+      toggleDisableClick(secondCardClicked);
       displayStats();
       setTimeout(
         function () {
@@ -64,7 +61,11 @@ function handleCardClick(event) {
 }
 
 function toggleModal() {
-  $(".modal").toggleClass("showModal");
+  $("#winModal").toggleClass("showModal");
+}
+
+function toggleDisableClick(element) {
+  element.toggleClass("clicked");
 }
 
 function calculateAccuracy() {
@@ -93,10 +94,7 @@ function resetStats() {
   gamesPlayed++;
   displayStats();
   $(".cardback").removeClass("hidden");
-}
-
-function toggleDisableClick(element) {
-  element.toggleClass("clicked");
+  toggleDisableClick($(".card"));
 }
 
 
