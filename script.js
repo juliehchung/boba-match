@@ -41,21 +41,24 @@ function handleCardClick(event) {
       firstCardClicked = null;
       secondCardClicked = null;
       if (matches === maxMatches) {
-        resetStats();
-        $(".cardfront").shuffle();
-        toggleModal();
+        setTimeout(
+          function () {
+            resetStats();
+            $(".cardfront").shuffle();
+            toggleModal();
+          }, 900);
       }
     } else {
-      toggleDisableClick(firstCardClicked);
-      toggleDisableClick(secondCardClicked);
       displayStats();
       setTimeout(
         function () {
+          toggleDisableClick(firstCardClicked);
+          toggleDisableClick(secondCardClicked);
           firstCardClicked.find(".cardback").removeClass("hidden");
           secondCardClicked.find(".cardback").removeClass("hidden");
           firstCardClicked = null;
           secondCardClicked = null;
-        }, 1500);
+        }, 1000);
     }
   }
 }
