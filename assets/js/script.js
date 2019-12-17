@@ -100,8 +100,6 @@ function resetStats() {
   toggleDisableClick($(".card"));
 }
 
-
-//shuffle plug-in
 (function ($) {
   $.fn.shuffle = function () {
     var allElems = this.get(),

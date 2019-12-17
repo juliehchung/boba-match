@@ -170,7 +170,7 @@ main {
 
 .cardback {
   background-color: rgb(220, 232, 238);
-  background-image: url(images/cardback.png);
+  background-image: url(../images/cardback.png);
   background-size: 98%;
   background-repeat: no-repeat;
   z-index: 1;
@@ -183,39 +183,39 @@ main {
 }
 
 .cf1 {
-  background-image: url(images/bluelychee-cooler.png);
+  background-image: url(../images/bluelychee-cooler.png);
 }
 
 .cf2 {
-  background-image: url(images/butterflypeatea-lemonade.png);
+  background-image: url(../images/butterflypeatea-lemonade.png);
 }
 
 .cf3 {
-  background-image: url(images/honeydew.png);
+  background-image: url(../images/honeydew.png);
 }
 
 .cf4 {
-  background-image: url(images/ice-milk.png);
+  background-image: url(../images/ice-milk.png);
 }
 
 .cf5 {
-  background-image: url(images/mango.png);
+  background-image: url(../images/mango.png);
 }
 
 .cf6 {
-  background-image: url(images/matcha.png);
+  background-image: url(../images/matcha.png);
 }
 
 .cf7 {
-  background-image: url(images/milk-tea.png);
+  background-image: url(../images/milk-tea.png);
 }
 
 .cf8 {
-  background-image: url(images/mocha.png);
+  background-image: url(../images/mocha.png);
 }
 
 .cf9 {
-  background-image: url(images/strawberry.png);
+  background-image: url(../images/strawberry.png);
 }
 
 .clicked {
