@@ -12,7 +12,7 @@ A JavaScript memory matching application designed to fit a modern, diverse boba-
 
 ## Live Demo
 
-Coming Soon
+Link: https://bobafy.juliehchung.com
 
 ## Features
 
