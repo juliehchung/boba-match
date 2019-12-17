@@ -24,4 +24,4 @@ Coming Soon
 
 ## Example of the App
 
-![Bobafy](images/Bobafy.png)
+![Bobafy](assets/images/Bobafy.png)
