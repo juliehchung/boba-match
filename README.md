@@ -22,19 +22,6 @@ Coming Soon
 - Users can view how many games they have played
 - Users can restart the game upon completion
 
-## Preview
+## Example of the App
 
 Coming Soon
-
-## Development
-
-#### Getting Started
-
-1. Clone the repository.
-
-    ```shell
-    git clone https://github.com/juliehchung/bobafy
-    cd bobafy
-    ```
-
-2. Start the project. Once started you can view the application by opening http://localhost/bobafy in your browser.
