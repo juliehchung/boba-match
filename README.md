@@ -22,6 +22,6 @@ Coming Soon
 - Users can view how many games they have played
 - Users can restart the game upon completion
 
-## Example of the App
+## Preview of the App
 
 ![Bobafy](assets/images/Bobafy.png)
