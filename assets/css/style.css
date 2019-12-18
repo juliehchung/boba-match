@@ -224,8 +224,9 @@ aside, main {
   display: none;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
   .title {
+    font-size: 4rem;
     width: 100%;
     height: auto;
     padding: 25px 25px 0 25px;
@@ -244,13 +245,94 @@ aside, main {
     width: 100%;
   }
 
+  .games, .gameAttempts, .gameAccuracy {
+    border: 0.5px dotted black;
+    border-radius: 45%;
+    width: 20%;
+    margin: 2%;
+  }
+
   .stats {
     width: 100%;
     margin: 0;
+    border: none;
+    padding: 7%;
   }
 
   main {
     height: 50%;
+    width: 100%;
+    margin: 2% auto auto auto;
   }
 
+  .row {
+    height: 50%;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 3.5rem;
+  }
+
+  .row {
+    height: 45%;
+  }
+}
+
+@media (max-width: 663px) {
+  .title {
+    font-size: 3rem;
+  }
+
+  .games, .gameAttempts, .gameAccuracy {
+    width: 105px;
+    padding: 5px;
+    margin: 20px;
+  }
+}
+
+@media (max-width: 561px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .games, .gameAttempts, .gameAccuracy {
+    width: 105px;
+    padding: 5px;
+    margin: auto;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .row {
+    height: 175%;
+    width: 50%;
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .card {
+    margin: 5px;
+    height: 98%;
+    width: 60%;
+  }
+}
+
+@media (max-width: 390px) {
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .stats {
+    font-size: 1rem;
+  }
+
+  .row {
+    height: 165%;
+  }
 }
