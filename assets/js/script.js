@@ -15,6 +15,7 @@ function initializeApp() {
   $(".card").click(handleCardClick);
   displayStats();
   $(".restartButton").click(toggleModal);
+  $(".cardfront").shuffle();
 }
 
 function handleCardClick(event) {
