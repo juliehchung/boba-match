@@ -260,13 +260,13 @@ aside, main {
   }
 
   main {
-    height: 50%;
+    height: 40%;
     width: 100%;
     margin: 2% auto auto auto;
   }
 
   .row {
-    height: 50%;
+    height: 55%;
   }
 
 }
@@ -295,12 +295,12 @@ aside, main {
 
 @media (max-width: 561px) {
   .title {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .games, .gameAttempts, .gameAccuracy {
-    width: 105px;
-    padding: 5px;
+    width: 90px;
+    padding: 2px;
     margin: auto;
   }
 
@@ -309,8 +309,13 @@ aside, main {
     flex-direction: row;
   }
 
+  main {
+    height: 48%;
+    width: 80%;
+  }
+
   .row {
-    height: 175%;
+    height: 180%;
     width: 50%;
     flex-direction: column;
     margin: 0;
