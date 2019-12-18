@@ -342,7 +342,7 @@ aside, main {
   }
 }
 
-@media (max-height: 320px) {
+@media (max-height: 415px) {
   .title {
     font-size: 1rem;
   }
