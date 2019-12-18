@@ -249,7 +249,7 @@ aside, main {
     border: 0.5px dotted black;
     border-radius: 45%;
     width: 20%;
-    margin: 2%;
+    margin:  0 20px 0 20px;
   }
 
   .stats {
@@ -260,13 +260,13 @@ aside, main {
   }
 
   main {
-    height: 40%;
+    height: 50%;
     width: 100%;
     margin: 2% auto auto auto;
   }
 
   .row {
-    height: 55%;
+    height: 50%;
   }
 
 }
@@ -295,12 +295,12 @@ aside, main {
 
 @media (max-width: 561px) {
   .title {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   .games, .gameAttempts, .gameAccuracy {
-    width: 90px;
-    padding: 2px;
+    width: 105px;
+    padding: 5px;
     margin: auto;
   }
 
@@ -315,7 +315,7 @@ aside, main {
   }
 
   .row {
-    height: 180%;
+    height: 175%;
     width: 50%;
     flex-direction: column;
     margin: 0;
@@ -340,4 +340,20 @@ aside, main {
   .row {
     height: 165%;
   }
+}
+
+@media (min-height: 320px) {
+  .title {
+    font-size: 1rem;
+  }
+
+  .games, .gameAttempts, .gameAccuracy {
+    width: 100px;
+    margin: 5px 20px 0 20px;
+  }
+
+  main {
+    margin: 15px 0 0 0;
+  }
+
 }
