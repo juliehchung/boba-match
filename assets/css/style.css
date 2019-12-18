@@ -14,6 +14,7 @@ body {
   font-family: Fredericka the Great;
   font-size: 5vw;
   text-shadow: 2px 2px 6px gray;
+  user-select: none;
 }
 
 .watercolor {
@@ -28,36 +29,30 @@ body {
   height: calc(100vh - 15vh);
   font-size: 0px;
   width: 100%;
+  user-select: none;
 }
 
-.asideDiv {
+aside {
   width: 25%;
   text-align: center;
   flex-direction: column;
   justify-content: center;
-}
-
-aside {
-  height: 100%;
-  padding: 3vh 0vh;
+  height: 90%;
   font-family: Fredericka the Great;
   font-size: 1.2rem;
 }
 
 main {
   width: 75%;
+  display: flex;
 }
 
-.asideDiv, main {
+aside, main {
   font-size: initial;
   font-weight: bold;
   box-sizing: border-box;
-  padding: 3vh;
-  height: 100%;
-  display: inline-block;
-  position: relative;
-  display: flex;
 }
+
 
 .statsTitle {
   font-size: 4vh;
@@ -227,4 +222,35 @@ main {
 
 .hidden {
   display: none;
+}
+
+@media (max-width: 767px) {
+  .title {
+    width: 100%;
+    height: auto;
+    padding: 25px 25px 0 25px;
+  }
+
+  .content {
+    flex-direction: column;
+  }
+
+  .statsTitle {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    height: auto;
+    width: 100%;
+  }
+
+  .stats {
+    width: 100%;
+    margin: 0;
+  }
+
+  main {
+    height: 50%;
+  }
+
 }
