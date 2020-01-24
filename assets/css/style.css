@@ -269,6 +269,34 @@ aside, main {
     height: 50%;
   }
 
+  .modalContent {
+    width: 60%;
+    height: 30%;
+  }
+
+  .modalTitle {
+    font-size: 2rem;
+  }
+
+  .restartButton {
+    font-size: 1.5rem;
+  }
+
+}
+
+@media (max-width: 830px) {
+  .modalContent {
+    width: 40%;
+    height: 40%;
+  }
+
+  .modalTitle {
+    font-size: 1rem;
+  }
+
+  .restartButton {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -278,6 +306,34 @@ aside, main {
 
   .row {
     height: 45%;
+  }
+
+  .modalContent {
+    width: 60%;
+    height: 30%;
+  }
+
+  .modalTitle {
+    font-size: 2rem;
+  }
+
+  .restartButton {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 740px) {
+  .modalContent {
+    width: 60%;
+    height: 30%;
+  }
+
+  .modalTitle {
+    font-size: 1rem;
+  }
+
+  .restartButton {
+    font-size: 1rem;
   }
 }
 
