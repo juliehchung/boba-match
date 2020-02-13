@@ -1,24 +1,26 @@
 $(document).ready(initializeApp);
 
+let cardImages = ['cf1', 'cf2', 'cf3', 'cf4', 'cf5', 'cf6', 'cf7', 'cf8', 'cf9', 'cf1', 'cf2', 'cf3', 'cf4', 'cf5', 'cf6', 'cf7', 'cf8', 'cf9'];
 
-var firstCardClicked = null;
-var secondCardClicked = null;
-var matches = null;
+let firstCardClicked = null;
+let secondCardClicked = null;
 
-var maxMatches = 9;
+let matches = null;
+let maxMatches = 9;
 
-var attempts = 0;
-var gamesPlayed = 0;
+let attempts = 0;
+let gamesPlayed = 0;
 
 
 function initializeApp() {
+  shuffle(cardImages);
+  makeCards(cardImages);
   $(".card").click(handleCardClick);
   displayStats();
   $(".restartButton").click(toggleModal);
-  $(".cardfront").shuffle();
 }
 
-function handleCardClick(event) {
+const handleCardClick = event => {
   if (firstCardClicked !== null && secondCardClicked !== null) {
     return;
   }
@@ -45,7 +47,7 @@ function handleCardClick(event) {
         setTimeout(
           function () {
             resetStats();
-            $(".cardfront").shuffle();
+            shuffle(cardImages);
             toggleModal();
           }, 900);
       }
@@ -64,21 +66,21 @@ function handleCardClick(event) {
   }
 }
 
-function toggleModal() {
+const toggleModal = () => {
   $("#winModal").toggleClass("showModal");
 }
 
-function toggleDisableClick(element) {
+const toggleDisableClick = element => {
   element.toggleClass("clicked");
 }
 
-function calculateAccuracy() {
+const calculateAccuracy = () => {
   var accuracy = matches / attempts;
   accuracy = Math.floor(accuracy * 100);
   return accuracy;
 }
 
-function displayStats() {
+const displayStats = () => {
   $(".gamesPlayed").text("Games Played:");
   $(".gamesNum").text(gamesPlayed);
   $(".attempts").text("Attempts:");
@@ -92,7 +94,7 @@ function displayStats() {
   }
 }
 
-function resetStats() {
+const resetStats = () => {
   matches = null;
   attempts = 0;
   gamesPlayed++;
@@ -101,21 +103,28 @@ function resetStats() {
   toggleDisableClick($(".card"));
 }
 
-(function ($) {
-  $.fn.shuffle = function () {
-    var allElems = this.get(),
-      getRandom = function (max) {
-        return Math.floor(Math.random() * max);
-      },
-      shuffled = $.map(allElems, function () {
-        var random = getRandom(allElems.length),
-          randEl = $(allElems[random]).clone(true)[0];
-        allElems.splice(random, 1);
-        return randEl;
-      });
-    this.each(function (i) {
-      $(this).replaceWith($(shuffled[i]));
-    });
-    return $(shuffled);
-  };
-})(jQuery);
+const makeCards = imgArray => {
+  let pictureElements;
+  let backElement;
+  let counter = 0;
+  imgArray.forEach(cardPhoto => {
+    pictureElements = $("<div>").addClass("cardfront " + cardPhoto);
+    $("#card" + [counter]).append(pictureElements);
+    backElement = $("<div>").addClass("cardback");
+    $("#card" + [counter]).append(backElement);
+    counter++
+  })
+}
+
+const shuffle = imgArray => {
+  let current = imgArray.length;
+  let temporaryValue, random;
+  while (0 !== current) {
+    random = Math.floor(Math.random() * current);
+    current -= 1;
+    temporaryValue = imgArray[current];
+    imgArray[current] = imgArray[random];
+    imgArray[random] = temporaryValue;
+  }
+  return imgArray;
+}

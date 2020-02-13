@@ -118,7 +118,7 @@ aside, main {
   background-color: gray;
   color: white;
   padding: 2vh;
-  font-size: 1em;
+  font-size: 1rem;
   border-radius: 60%;
   opacity: 0.5;
   transition-duration: 0.3s;
