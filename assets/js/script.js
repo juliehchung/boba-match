@@ -13,7 +13,6 @@ let gamesPlayed = 0;
 
 
 function initializeApp() {
-  shuffle(cardImages);
   makeCards(cardImages);
   $(".card").click(handleCardClick);
   displayStats();
@@ -47,7 +46,7 @@ const handleCardClick = event => {
         setTimeout(
           function () {
             resetStats();
-            shuffle(cardImages);
+            makeCards(cardImages);
             toggleModal();
           }, 900);
       }
@@ -101,9 +100,11 @@ const resetStats = () => {
   displayStats();
   $(".cardback").removeClass("hidden");
   toggleDisableClick($(".card"));
+  $(".card").empty();
 }
 
-const makeCards = imgArray => {
+const makeCards = imageArray => {
+  let imgArray = shuffle(imageArray);
   let pictureElements;
   let backElement;
   let counter = 0;
