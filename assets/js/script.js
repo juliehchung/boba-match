@@ -1,12 +1,12 @@
 $(document).ready(initializeApp);
 
-let cardImages = ['cf1', 'cf2', 'cf3', 'cf4', 'cf5', 'cf6', 'cf7', 'cf8', 'cf9', 'cf1', 'cf2', 'cf3', 'cf4', 'cf5', 'cf6', 'cf7', 'cf8', 'cf9'];
+const cardImages = ['cf1', 'cf2', 'cf3', 'cf4', 'cf5', 'cf6', 'cf7', 'cf8', 'cf9', 'cf1', 'cf2', 'cf3', 'cf4', 'cf5', 'cf6', 'cf7', 'cf8', 'cf9'];
 
 let firstCardClicked = null;
 let secondCardClicked = null;
 
 let matches = null;
-let maxMatches = 9;
+const maxMatches = 9;
 
 let attempts = 0;
 let gamesPlayed = 0;
@@ -34,8 +34,8 @@ const handleCardClick = event => {
     secondCardClicked = $(event.currentTarget);
     toggleDisableClick(secondCardClicked);
 
-    var firstImg = firstCardClicked.find(".cardfront").css("background-image");
-    var secondImg = secondCardClicked.find(".cardfront").css("background-image");
+    const firstImg = firstCardClicked.find(".cardfront").css("background-image");
+    const secondImg = secondCardClicked.find(".cardfront").css("background-image");
 
     if (firstImg === secondImg) {
       matches++;
@@ -74,7 +74,7 @@ const toggleDisableClick = element => {
 }
 
 const calculateAccuracy = () => {
-  var accuracy = matches / attempts;
+  let accuracy = matches / attempts;
   accuracy = Math.floor(accuracy * 100);
   return accuracy;
 }
@@ -86,7 +86,7 @@ const displayStats = () => {
   $(".attemptsNum").text(attempts);
   $(".accuracy").text("Accuracy:");
   if (attempts >= 1) {
-    var accuracyResult = calculateAccuracy();
+    const accuracyResult = calculateAccuracy();
     $(".accuracyNum").text(accuracyResult + "%");
   } else {
     $(".accuracyNum").text("We'll See!");
@@ -103,29 +103,29 @@ const resetStats = () => {
   $(".card").empty();
 }
 
-const makeCards = imageArray => {
-  let imgArray = shuffle(imageArray);
-  let pictureElements;
-  let backElement;
-  let counter = 0;
-  imgArray.forEach(cardPhoto => {
-    pictureElements = $("<div>").addClass("cardfront " + cardPhoto);
-    $("#card" + [counter]).append(pictureElements);
-    backElement = $("<div>").addClass("cardback");
-    $("#card" + [counter]).append(backElement);
-    counter++
-  })
-}
-
 const shuffle = imgArray => {
   let current = imgArray.length;
-  let temporaryValue, random;
+  let temp, random;
   while (0 !== current) {
     random = Math.floor(Math.random() * current);
     current -= 1;
-    temporaryValue = imgArray[current];
+    temp = imgArray[current];
     imgArray[current] = imgArray[random];
-    imgArray[random] = temporaryValue;
+    imgArray[random] = temp;
   }
   return imgArray;
+}
+
+const makeCards = imageArray => {
+  const imgArray = shuffle(imageArray);
+  let cardFrontElements;
+  let cardBackElements;
+  let cardCount = 0;
+  imgArray.forEach(cardPhoto => {
+    cardFrontElements = $("<div>").addClass("cardfront " + cardPhoto);
+    $("#card" + [cardCount]).append(cardFrontElements);
+    cardBackElements = $("<div>").addClass("cardback");
+    $("#card" + [cardCount]).append(cardBackElements);
+    cardCount++
+  })
 }
