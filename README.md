@@ -22,6 +22,6 @@ Link: https://bobafy.juliehchung.com
 - Users can view how many games they have played
 - Users can restart the game upon completion
 
-## Preview of the App
+## Preview
 
 ![Bobafy](assets/images/Bobafy.png)
